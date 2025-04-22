@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>登入系統</title>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+</head>
+<body>
+  <h1>登入</h1>
+  <input type="email" id="email" placeholder="電子郵件">
+  <input type="password" id="password" placeholder="密碼">
+  <button onclick="login()">登入</button>
+  <button onclick="register()">註冊</button>
+  <p id="error" style="color:red"></p>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
