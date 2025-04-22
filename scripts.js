@@ -55,7 +55,7 @@ firebase.auth().signInWithEmailAndPassword(email, password)
     const uid = userCredential.user.uid;
     
     // 發送資料到 Google Sheets
-    fetch('https://script.google.com/macros/s/AKfycbyv1Jr0tzs7lk4Ev77Usazo3mfw-OxLZdA1urJQW0nqtF_3VCohtaedOeMGjrk75YwhHg/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbwI_BTbdnlvQcKsaF5VUx_Qp0cZJ0-AR--8tHqUZY3VoSslzD_f82VD9_Q6Mm3zI0Ef-w/exec', {
       method: 'POST',
       body: JSON.stringify({
         email: email,
