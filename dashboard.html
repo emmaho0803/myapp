@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>儀表板</title>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+    .user-info {
+      background: #f5f5f5;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .btn {
+      background: #4285f4;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      text-decoration: none;
+      display: inline-block;
+      margin: 10px;
+    }
+    .btn:hover {
+      background: #3367d6;
+    }
+  </style>
+</head>
+<body>
+  <div class="user-info">
+    <h1>歡迎來到儀表板</h1>
+    <p id="user-email">載入中...</p>
+    <p id="last-login"></p>
+  </div>
+
+  <div>
+    <h2>操作選項</h2>
+    <a href="https://ord.nycu.edu.tw/" class="btn" target="_blank">前往 ord.nycu.edu.tw</a>
+    <button onclick="logout()" class="btn">登出</button>
+  </div>
+
+  <script>
+
+    const firebaseConfig = {
+
+    apiKey: "AIzaSyAPbGUchS9DyAHj2F4WKaj5WPZLJWOUKHY",
+
+    authDomain: "rd-project-42546.firebaseapp.com",
+
+    projectId: "rd-project-42546",
+
+    storageBucket: "rd-project-42546.firebasestorage.app",
+
+    messagingSenderId: "688686999845",
+
+    appId: "1:688686999845:web:bf3be4032654aa594352cc",
+
+    measurementId: "G-3M86CJ12FQ"
+
+    }; 
+
+    firebase.initializeApp(firebaseConfig);
+
+    // 監聽登入狀態
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        // 用戶已登入
+        document.getElementById('user-email').textContent = `登入電子郵件: ${user.email}`;
+        document.getElementById('last-login').textContent = `最後登入時間: ${new Date().toLocaleString()}`;
+        
+        // 可選: 自動跳轉到 ord.nycu.edu.tw (取消註解即可啟用)
+        // window.location.href = "https://ord.nycu.edu.tw/";
+      } else {
+        // 用戶未登入，跳轉回登入頁
+        window.location.href = "index.html";
+      }
+    });
+
+    // 登出函數
+    function logout() {
+      firebase.auth().signOut().then(() => {
+        window.location.href = "index.html";
+      });
+    }
+  </script>
+</body>
+</html>

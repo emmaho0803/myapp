@@ -1,12 +1,22 @@
-// 初始化 Firebase
+
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT",
-  storageBucket: "YOUR_BUCKET.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
-};
+
+    apiKey: "AIzaSyAPbGUchS9DyAHj2F4WKaj5WPZLJWOUKHY",
+  
+    authDomain: "rd-project-42546.firebaseapp.com",
+  
+    projectId: "rd-project-42546",
+  
+    storageBucket: "rd-project-42546.firebasestorage.app",
+  
+    messagingSenderId: "688686999845",
+  
+    appId: "1:688686999845:web:bf3be4032654aa594352cc",
+  
+    measurementId: "G-3M86CJ12FQ"
+  
+  };
+
 firebase.initializeApp(firebaseConfig);
 
 // 登入函數
